@@ -134,7 +134,7 @@
         }
       }
       else {
-        window.hwcrypto.sign(cert, {type: hashtype, hex: hash},
+        window.hwcrypto.authenticate(cert, {type: hashtype, hex: hash},
             {lang: lang, info: $("#info").val()}).then(function(response) {
           log_text("Generated signature:\n" + wrapLine64(response.hex));
         }, function(err) {
