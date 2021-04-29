@@ -134,7 +134,7 @@
         }
       }
       else {
-        window.hwcrypto.authenticate(hash).then(function(response) {
+        window.hwcrypto.authenticate('en',hash).then(function(response) {
           console.log(response)
           log_text("Generated signature:\n" + wrapLine64(response.hex));
         }, function(err) {
