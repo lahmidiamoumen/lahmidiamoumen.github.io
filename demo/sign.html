@@ -134,11 +134,11 @@
         }
       }
       else {
-        window.hwcrypto.authenticate('en',hash).then(function(response) {
-          console.log(response)
+        window.hwcrypto.sign(cert, {type: hashtype, hex: hash},
+            {lang: lang, info: $("#info").val()}).then(function(response) {
           log_text("Generated signature:\n" + wrapLine64(response.hex));
         }, function(err) {
-          log_text("sign() failed: " + err);
+          log_text("sign() failed: "+ err +" - " + err.message);
         });
       }
     }, function(err) {
